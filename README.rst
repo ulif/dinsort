@@ -30,3 +30,23 @@ provides two variants:
 
 In both variants other diacritics are removed. So ``'é'`` and ``'ç'``
 become ``'e'`` and ``'c'`` respecively.
+
+
+Install
+-------
+
+The latest release of `dinsort` can be installed via pip_::
+
+  $ pip install dinsort
+
+The exact way depends on your operating system.
+
+
+Usage
+-----
+
+`dinsort` is a Python_ library.
+
+
+.. _pip: https://pip.pypa.io/en/latest/
+.. _Python: https://python.org/
