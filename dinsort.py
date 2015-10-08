@@ -18,5 +18,5 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-def normalize(text, mode):
+def normalize(text, mode=None):
     return text
