@@ -20,4 +20,5 @@
 
 
 def normalize(text, mode=None):
+    text = text.replace("ß", "ss")
     return text
