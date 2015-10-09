@@ -33,8 +33,13 @@ def normalize(text, variant=VARIANT1):
     With `variant` set to ``VARIANT1`` (default), german umlauts are
     transformed to plain chars: ``ä`` -> ``a``, ``ö`` -> ``o``, ...
 
+      >>> normalize('Mäßig'.decode('utf-8'))
+      u'massig'
+
     With `variant` set to ``VARIANT2``, german umlauts are transformed
     ``ä`` -> ``ae``, etc.
+
+    All words are lowered.
     """
     text = text.replace(u"ß", u"ss")
     text = text.lower()
