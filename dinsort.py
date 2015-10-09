@@ -18,7 +18,13 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+#: The lexicographic variant
+VARIANT1 = 'variant1'
 
-def normalize(text, mode=None):
+#: The namelist variant.
+VARIANT2 = 'variant2'
+
+
+def normalize(text, variant=VARIANT1):
     text = text.replace("ß", "ss")
     return text
