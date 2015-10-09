@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+#
 # tests for dinsort module.
 from dinsort import normalize
 
