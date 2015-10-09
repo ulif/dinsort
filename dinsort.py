@@ -28,6 +28,14 @@ VARIANT2 = 'variant2'
 
 
 def normalize(text, variant=VARIANT1):
+    """Create a normalized version of `text`.
+
+    With `variant` set to ``VARIANT1`` (default), german umlauts are
+    transformed to plain chars: ``ä`` -> ``a``, ``ö`` -> ``o``, ...
+
+    With `variant` set to ``VARIANT2``, german umlauts are transformed
+    ``ä`` -> ``ae``, etc.
+    """
     text = text.replace(u"ß", u"ss")
     text = text.lower()
     if variant == VARIANT2:
