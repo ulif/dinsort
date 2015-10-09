@@ -16,9 +16,9 @@ class TestNormalize(object):
 
     def test_normalize(self):
         # we can normalize strings
-        assert normalize("string") is not None
+        assert normalize(u"string") is not None
 
     def test_sharp_s(self):
         # sharp s equals 'ss'
-        assert normalize("ß") == "ss"
+        assert normalize(u"ß") == u"ss"
 
