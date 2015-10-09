@@ -22,3 +22,11 @@ class TestNormalize(object):
         # sharp s equals 'ss'
         assert normalize(u"ß") == u"ss"
 
+    def test_umlaut(self):
+        # we get ä -> a by default (and variant1 explicitly requested)
+        assert normalize(u"ä") == u"a"
+        assert normalize(u"ä", variant=VARIANT1) == u"a"
+
+    def test_umlaut_variant2(self):
+        # we get ä -> ae with variant 2
+        assert normalize(u"ä", variant=VARIANT2) == u"ae"
