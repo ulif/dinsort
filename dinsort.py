@@ -17,6 +17,8 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+import unicodedata
+
 
 #: The lexicographic variant
 VARIANT1 = 'variant1'
@@ -26,5 +28,10 @@ VARIANT2 = 'variant2'
 
 
 def normalize(text, variant=VARIANT1):
-    text = text.replace("ß", "ss")
-    return text
+    text = text.replace(u"ß", u"ss")
+    text = text.lower()
+    if variant == VARIANT2:
+        for char, repl in ((u'ä', u'ae'), (u'ö', u'oe'), (u'ü', u'ue')):
+            text = text.replace(char, repl)
+    text = unicodedata.normalize("NFKD", text).encode("ASCII", "ignore")
+    return text.decode()
