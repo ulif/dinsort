@@ -31,3 +31,8 @@ class TestNormalize(object):
     def test_umlaut_variant2(self):
         # we get ä -> ae with variant 2
         assert normalize("ä", variant=VARIANT2) == "ae"
+
+    def test_lower_case(self):
+        # normalized terms are lowercase
+        assert normalize("FÖÖbar") == "foobar"
+        assert normalize("FÖÖbar", variant=VARIANT2) == "foeoebar"
