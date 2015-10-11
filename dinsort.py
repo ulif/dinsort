@@ -17,6 +17,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+from __future__ import unicode_literals
 import unicodedata
 
 
@@ -38,10 +39,10 @@ def normalize(text, variant=VARIANT1):
 
     All words are lowered.
     """
-    text = text.replace(u"ß", u"ss")
+    text = text.replace("ß", "ss")
     text = text.lower()
     if variant == VARIANT2:
-        for char, repl in ((u'ä', u'ae'), (u'ö', u'oe'), (u'ü', u'ue')):
+        for char, repl in (('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue')):
             text = text.replace(char, repl)
     text = unicodedata.normalize("NFKD", text).encode("ASCII", "ignore")
     return text.decode()
