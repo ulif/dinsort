@@ -36,3 +36,7 @@ class TestNormalize(object):
         # normalized terms are lowercase
         assert normalize("FÖÖbar") == "foobar"
         assert normalize("FÖÖbar", variant=VARIANT2) == "foeoebar"
+
+    def test_diacritic_chars_are_removed_from_diacritic(self):
+        # chars with diacritics (acutes, graves, tildas, etc.) are stripped.
+        assert normalize("Čéñâça") == "cenaca"
