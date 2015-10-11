@@ -40,3 +40,6 @@ class TestNormalize(object):
     def test_diacritic_chars_are_removed_from_diacritic(self):
         # chars with diacritics (acutes, graves, tildas, etc.) are stripped.
         assert normalize("Čéñâça") == "cenaca"
+        assert normalize("Čéñâça", variant=VARIANT1) == "cenaca"
+        assert normalize("ČÉÑÂÇA", variant=VARIANT2) == "cenaca"
+        assert normalize("ČÉÑÂÇA") == "cenaca"
