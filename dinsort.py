@@ -34,10 +34,20 @@ def normalize(text, variant=VARIANT1):
     With `variant` set to ``VARIANT1`` (default), german umlauts are
     transformed to plain chars: ``ä`` -> ``a``, ``ö`` -> ``o``, ...
 
+      >>> print(normalize("mäßig"))
+      massig
+
     With `variant` set to ``VARIANT2``, german umlauts are transformed
     ``ä`` -> ``ae``, etc.
 
+      >>> print(normalize("mäßig", variant=VARIANT2))
+      maessig
+
     All words are lowered.
+
+      >>> print(normalize("Maße"))
+      masse
+
     """
     text = text.replace("ß", "ss")
     text = text.lower()
