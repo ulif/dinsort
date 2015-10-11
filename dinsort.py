@@ -32,21 +32,28 @@ def normalize(text, variant=VARIANT1):
     """Create a normalized version of `text`.
 
     With `variant` set to ``VARIANT1`` (default), german umlauts are
-    transformed to plain chars: ``ä`` -> ``a``, ``ö`` -> ``o``, ...
+    transformed to plain chars: ``ä`` -> ``a``, ``ö`` -> ``o``, ...::
 
       >>> print(normalize("mäßig"))
       massig
 
     With `variant` set to ``VARIANT2``, german umlauts are transformed
-    ``ä`` -> ``ae``, etc.
+    ``ä`` -> ``ae``, etc.::
 
       >>> print(normalize("mäßig", variant=VARIANT2))
       maessig
 
-    All words are lowered.
+    All words are turned to lower-case.::
 
       >>> print(normalize("Maße"))
       masse
+
+    Other chars with diacritics will be returned with the diacritics
+    stripped off::
+
+      >>> print(normalize("Česká"))
+      ceska
+
 
     """
     text = text.replace("ß", "ss")
