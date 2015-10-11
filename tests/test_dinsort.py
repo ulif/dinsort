@@ -30,4 +30,4 @@ class TestNormalize(object):
 
     def test_umlaut_variant2(self):
         # we get ä -> ae with variant 2
-        assert normalize(u"ä", variant=VARIANT2) == u"ae"
+        assert normalize("ä", variant=VARIANT2) == "ae"
