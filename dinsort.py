@@ -63,3 +63,7 @@ def normalize(text, variant=VARIANT1):
             text = text.replace(char, repl)
     text = unicodedata.normalize("NFKD", text).encode("ASCII", "ignore")
     return text.decode()
+
+
+def sort_func(variant=VARIANT1):
+    return lambda x: normalize(x, variant=variant)
