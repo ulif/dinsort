@@ -1,5 +1,5 @@
 dinsort
-=======
+*******
 
 Sort terms according to German DIN.
 
@@ -33,7 +33,7 @@ become ``'e'`` and ``'c'`` respecively.
 
 
 Install
--------
+=======
 
 The latest release of `dinsort` can be installed via pip_::
 
@@ -43,9 +43,13 @@ The exact way depends on your operating system.
 
 
 Usage
------
+=====
 
 `dinsort` is a Python_ library.
+
+
+Normalizing Terms
+-----------------
 
 Main function is `dinsort.normalize`. It generates a normalized form
 of any string term given::
