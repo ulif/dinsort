@@ -48,6 +48,11 @@ def normalize(text, variant=VARIANT1, case_sensitive=False):
       >>> print(normalize("Maße"))
       masse
 
+    except if `case_sensitive` is set to `True`::
+
+      >>> print(normalize("Maße", case_sensitive=True))
+      Masse
+
     Other chars with diacritics will be returned with the diacritics
     stripped off::
 
