@@ -47,6 +47,28 @@ Usage
 
 `dinsort` is a Python_ library.
 
+Main function is `dinsort.normalize`. It generates a normalized form
+of any string term given::
+
+   >>> from dinsort import normalize
+   >>> print(normalize("Löblich"))
+   loblich
+
+Variants are defined as constants::
+
+   >>> from dinsort import VARIANT1, VARIANT2
+   >>> print(normalize("Müßig", variant=VARIANT1))
+   mussig
+
+   >>> print(normalize("Müßig", variant=VARIANT2))
+   muessig
+
+Terms are normalized to lower-case by default. You can request
+case-sensitiveness::
+
+   >>> print(normalize("Maße", case_sensitive=True))
+   Masse
+
 
 .. _pip: https://pip.pypa.io/en/latest/
 .. _Python: https://python.org/
