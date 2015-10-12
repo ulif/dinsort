@@ -2,7 +2,7 @@
 #
 # tests for dinsort module.
 from __future__ import unicode_literals
-from dinsort import normalize, VARIANT1, VARIANT2
+from dinsort import normalize, VARIANT1, VARIANT2, sort_func
 
 class TestDinsort(object):
 
@@ -15,6 +15,13 @@ class TestDinsort(object):
         # we can use normalize to sort by key
         assert sorted(["Musst", "Muß"]) == ["Musst", "Muß"]
         assert sorted(["Musst", "Muß"], key=normalize) == ["Muß", "Musst"]
+
+class TestSortFunct(object):
+
+    def test_sort_func(self):
+        # we can get a sort func
+        func = sort_func()
+        assert func("Öre") == normalize("Öre")
 
 
 class TestNormalize(object):
