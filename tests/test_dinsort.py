@@ -11,6 +11,11 @@ class TestDinsort(object):
         assert VARIANT1 is not None
         assert VARIANT2 is not None
 
+    def test_sort_key(self):
+        # we can use normalize to sort by key
+        assert sorted(["Musst", "Muß"]) == ["Musst", "Muß"]
+        assert sorted(["Musst", "Muß"], key=normalize) == ["Muß", "Musst"]
+
 
 class TestNormalize(object):
     # tests for normalize()
