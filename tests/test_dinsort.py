@@ -23,6 +23,11 @@ class TestSortFunct(object):
         func = sort_func()
         assert func("Öre") == normalize("Öre")
 
+    def test_sort_func_variant(self):
+        # we can set a variant for sort func
+        func = sort_func(variant=VARIANT2)
+        assert func("Öre") == normalize("Öre", variant=VARIANT2)
+
 
 class TestNormalize(object):
     # tests for normalize()
