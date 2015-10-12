@@ -28,7 +28,7 @@ VARIANT1 = 'variant1'
 VARIANT2 = 'variant2'
 
 
-def normalize(text, variant=VARIANT1):
+def normalize(text, variant=VARIANT1, case_sensitive=False):
     """Create a normalized version of `text`.
 
     With `variant` set to ``VARIANT1`` (default), german umlauts are
@@ -57,7 +57,8 @@ def normalize(text, variant=VARIANT1):
 
     """
     text = text.replace("ß", "ss")
-    text = text.lower()
+    if not case_sensitive:
+        text = text.lower()
     if variant == VARIANT2:
         for char, repl in (('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue')):
             text = text.replace(char, repl)
