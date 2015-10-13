@@ -1,7 +1,7 @@
 dinsort
 *******
 
-Sort terms according to German DIN.
+Sort terms according to German DIN 5007.
 
 |bdg-build|  | `sources <https://github.com/ulif/dinsort>`_ | `issues <https://github.com/ulif/dinsort/issues>`_
 
@@ -30,6 +30,38 @@ provides two variants:
 
 In both variants other diacritics are removed. So ``'é'`` and ``'ç'``
 become ``'e'`` and ``'c'`` respecively.
+
+
+Usage
+=====
+
+`dinsort` is a Python_ library.
+
+
+Normalizing Terms
+-----------------
+
+Main function is `dinsort.normalize`. It generates a normalized form
+of any string term given::
+
+   >>> from dinsort import normalize
+   >>> normalize("Löblich")
+   'loblich'
+
+Variants are defined as constants::
+
+   >>> from dinsort import VARIANT1, VARIANT2
+   >>> normalize("Müßig", variant=VARIANT1)
+   'mussig'
+
+   >>> normalize("Müßig", variant=VARIANT2)
+   'muessig'
+
+Terms are normalized to lower-case by default. You can request
+case-sensitiveness::
+
+   >>> normalize("Maße", case_sensitive=True)
+   'Masse'
 
 
 Install
@@ -71,37 +103,6 @@ or with `tox`::
   (py27) pip install tox
   (py27) tox
 
-
-Usage
-=====
-
-`dinsort` is a Python_ library.
-
-
-Normalizing Terms
------------------
-
-Main function is `dinsort.normalize`. It generates a normalized form
-of any string term given::
-
-   >>> from dinsort import normalize
-   >>> normalize("Löblich")
-   'loblich'
-
-Variants are defined as constants::
-
-   >>> from dinsort import VARIANT1, VARIANT2
-   >>> normalize("Müßig", variant=VARIANT1)
-   'mussig'
-
-   >>> normalize("Müßig", variant=VARIANT2)
-   'muessig'
-
-Terms are normalized to lower-case by default. You can request
-case-sensitiveness::
-
-   >>> normalize("Maße", case_sensitive=True)
-   'Masse'
 
 
 .. _pip: https://pip.pypa.io/en/latest/
