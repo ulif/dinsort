@@ -54,7 +54,7 @@ Normalizing Terms
 Main function is `dinsort.normalize`. It generates a normalized form
 of any string term given::
 
-   >>> from dinsort import normalize, u
+   >>> from dinsort import normalize
    >>> normalize("Löblich")
    'loblich'
 
