@@ -35,11 +35,41 @@ become ``'e'`` and ``'c'`` respecively.
 Install
 =======
 
+User Install
+------------
+
 The latest release of `dinsort` can be installed via pip_::
 
   $ pip install dinsort
 
 The exact way depends on your operating system.
+
+
+Developer Install
+-----------------
+
+Developers clone the sources from github::
+
+  $ git clone https://github.com/ulif/dinsort.git
+
+Create a virtual env (Python versions >= 2.6 supported)::
+
+  $ cd dinsort
+  $ virtualenv py27
+  $ source py27/bin/activate
+
+and install dependencies::
+
+  (py27) python setup py dev
+
+You can run tests with `py.test`::
+
+  (py27) py.test
+
+or with `tox`::
+
+  (py27) pip install tox
+  (py27) tox
 
 
 Usage
