@@ -65,7 +65,9 @@ def normalize(text, variant=VARIANT1, case_sensitive=False):
     if not case_sensitive:
         text = text.lower()
     if variant == VARIANT2:
-        for char, repl in (('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue')):
+        for char, repl in (
+                ('ä', 'ae'), ('ö', 'oe'), ('ü', 'ue'),
+                ('Ä', 'AE'), ('Ö', 'OE'), ('Ü', 'UE')):
             text = text.replace(char, repl)
     text = unicodedata.normalize("NFKD", text).encode("ASCII", "ignore")
     return text.decode()

@@ -58,6 +58,10 @@ class TestNormalize(object):
         # we can enable case sensitiveness
         assert normalize("FÖöbar", case_sensitive=True) == "FOobar"
 
+    def test_case_sensitive_variant2(self):
+        # variant2 normalizations take place also with upper case chars
+        assert normalize("Öse", variant=VARIANT2, case_sensitive=True) == "OEse"
+
     def test_diacritic_chars_are_removed_from_diacritic(self):
         # chars with diacritics (acutes, graves, tildas, etc.) are stripped.
         assert normalize("Čéñâça") == "cenaca"
