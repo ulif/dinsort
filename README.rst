@@ -64,6 +64,39 @@ case-sensitiveness::
    'Masse'
 
 
+Sorting
+-------
+
+Normalized terms can easily be used for sorting lists of terms:
+
+   >>> sorted(["fas", "fair", "fär"], key=lambda x: normalize(x))
+   ['fair', 'fär', 'fas']
+
+We provide a shortcut to avoid (sometimes not easy to read) `lambda`
+statements with `normalize` in your code. Use `sort_func` for that::
+
+   >>> from dinsort import sort_func
+   >>> sorted(["fas", "fair", "fär"], key=sort_func())
+   ['fair', 'fär', 'fas']
+
+The `sort_func` accepts the keywords of `normalize`::
+
+   >>> sorted(["Muße", "muß"], key=sort_func())
+   ['muß', 'Muße']
+
+   >>> sorted(["Muße", "muß"], key=sort_func(case_sensitive=True))
+   ['Muße', 'muß']
+
+   >>> sorted(["far", "fähre"], key=sort_func())
+   ['fähre', 'far']
+
+   >>> sorted(["far", "färe", "fast"], key=sort_func())
+   ['far', 'färe', 'fast']
+
+   >>> sorted(["far", "färe", "fast"], key=sort_func(variant=VARIANT2))
+   ['färe', 'far', 'fast']
+
+
 Install
 =======
 
