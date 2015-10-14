@@ -3,6 +3,8 @@ sudo: false
 env:
   - TOXENV=py27
   - TOXENV=py34
+  - TOXENV=flake8
+  - TOXENV=coverage
 install:
   - pip install tox
 script:
