@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 from dinsort import normalize, VARIANT1, VARIANT2, sort_func
 
+
 class TestDinsort(object):
 
     def test_variants(self):
@@ -15,6 +16,7 @@ class TestDinsort(object):
         # we can use normalize to sort by key
         assert sorted(["Musst", "Muß"]) == ["Musst", "Muß"]
         assert sorted(["Musst", "Muß"], key=normalize) == ["Muß", "Musst"]
+
 
 class TestSortFunct(object):
 
@@ -65,7 +67,8 @@ class TestNormalize(object):
 
     def test_case_sensitive_variant2(self):
         # variant2 normalizations take place also with upper case chars
-        assert normalize("Öse", variant=VARIANT2, case_sensitive=True) == "OEse"
+        assert normalize(
+            "Öse", variant=VARIANT2, case_sensitive=True) == "OEse"
 
     def test_diacritic_chars_are_removed_from_diacritic(self):
         # chars with diacritics (acutes, graves, tildas, etc.) are stripped.
