@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.2 (unreleased)
+0.2 (2015-10-14)
 ----------------
 
 - Add `sort_func`. It is as shortcut for `lambda` expressions with
