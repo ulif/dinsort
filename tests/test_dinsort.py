@@ -28,6 +28,11 @@ class TestSortFunct(object):
         func = sort_func(variant=VARIANT2)
         assert func("Öre") == normalize("Öre", variant=VARIANT2)
 
+    def test_sort_func_case_sensitive(self):
+        # we can sort case sensitive
+        func = sort_func(case_sensitive=True)
+        assert func("UpperCase") == normalize("UpperCase", case_sensitive=True)
+
 
 class TestNormalize(object):
     # tests for normalize()
