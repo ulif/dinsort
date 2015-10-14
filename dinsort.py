@@ -73,5 +73,6 @@ def normalize(text, variant=VARIANT1, case_sensitive=False):
     return text.decode()
 
 
-def sort_func(variant=VARIANT1):
-    return lambda x: normalize(x, variant=variant)
+def sort_func(variant=VARIANT1, case_sensitive=False):
+    return lambda x: normalize(
+        x, variant=variant, case_sensitive=case_sensitive)
