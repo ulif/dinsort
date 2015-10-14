@@ -67,7 +67,7 @@ case-sensitiveness::
 Sorting
 -------
 
-Normalized terms can easily be used for sorting lists of terms:
+Normalized terms can easily be used for sorting lists of terms::
 
    >>> sorted(["fas", "fair", "fär"], key=lambda x: normalize(x))
    ['fair', 'fär', 'fas']
