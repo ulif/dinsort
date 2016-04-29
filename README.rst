@@ -125,7 +125,7 @@ Create a virtual env (Python versions >= 2.6 supported)::
 
 and install dependencies::
 
-  (py27) python setup py dev
+  (py27) python setup.py dev
 
 You can run tests with `py.test`::
 
